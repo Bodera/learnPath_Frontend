@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A gentle tutorial of HTML5 basic elements</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <!--
+        Everything here will be ignored.
+        -->
+        <!-- <h1>Hello World</h1> -->
+
+        <h2>CatPhotoApp</h2>
+
+        <!--The main HTML5 tag helps search engines and other developers find the main content of your page.-->
+        <main>
+
+        <!--anchor elements need a destination web address, the href attribute. They also need anchor text. -->
+        <p>View more <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>.
+        </p>
+
+        <!--You can make elements into links by nesting them within an a element.-->
+        <a href="#"><img src="https://bit.ly/fcc-running-cats" alt="three kittens walking in the direction of the camera"></a>
+
+        <!--img elements are self-closing. If the image is decorative, an empty alt attribute is a best practice. -->
+        <img src="https://bit.ly/fcc-relaxing-cat" alt="a yellow kitten.">
+
+        </br> <!--The </br> tag is used to break a line or a section of your page.-->
+
+        <!--the target="_blank" attribute causes the linked document to open in a new window tab.-->
+        <a href="#footer">Jump to Bottom</a>
+
+        <!--This is a dead link-->
+        <a href="#">Empty, I can't take you to nowhere.</a>
+
+        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat
+            the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. 
+            Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+
+
+        <div>
+        <p>An unordered list of three things that cats love to do:</p>
+        <ul>
+            <li>Taking a nap.</li>
+            <li>Gromming.</li>
+            <li>Scratching.</li>
+        </ul>
+        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet,
+                shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch
+                scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+        <p>And here is presented a ordered list of three things that cats hates the most:</p>
+        <ol>
+            <li>Tummy rubs.</li>
+            <li>Too much attention.</li>
+            <li>Not enough attention.</li>
+        </ol>
+        </div>
+        <p>Meowwww loved it, hated it, loved it, hated it yet spill litter box, scratch at owner, destroy all furniture, especially couch or lay on arms while you're using the keyboard. 
+        Missing until dinner time toy mouse squeak roll over. With tail in the air lounge in doorway. Man running from cops stops to pet cats, goes to jail.</p>
+
+        <!--To submit data to a server using nothing more than pure HTML, attach an action to your web form-->
+        <form action="/submit-cat-photo">
+
+        <!--Radio buttons are a type of input.-->
+        <!--You can use radio buttons for questions where you want the user to only give you one answer out of multiple options.-->
+        <!--All related radio buttons should have the same name attribute to create a radio button group. By creating a radio group, selecting any 
+                single radio button will automatically deselect the other buttons within the same group ensuring only one answer is provided by the user.-->
+        <!--By wrapping an input element inside of a label element it will automatically associate the radio button input with the label element surrounding it.-->
+        <!--It is considered best practice to set a for attribute on the label element, with a value that matches the value of the id attribute of the input element.-->
+        <!--You can set a radio button to be checked by default using the checked attribute.-->
+        <label for="indoor">
+            <input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor
+        </label>       
+        <label for="outdoor">
+            <input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor
+        </label> <!--The <output> element is the semantically correct element for displaying the results of a calculation from form elements, we can test it later.-->
+
+        </br>
+
+
+        <!--Checkboxes are another type of input-->
+        <!--Forms commonly use checkboxes for questions that may have more than one answer.-->
+        <!--Each of your checkboxes can be nested within its own label element.-->
+        <!--By wrapping an input element inside of a label element it will automatically associate the checkbox input with the label element surrounding it.-->
+        <!--All related checkbox inputs should have the same name attribute.-->
+        <!--It is considered best practice to explicitly define the relationship between a checkbox input and its corresponding label by setting the
+                for attribute on the label element to match the id attribute of the associated input element.-->
+        <!--You can set a checkbox to be checked by default using the checked attribute.-->
+        <label>
+            <input type="checkbox" name="personality" checked> Generous
+        </label>
+        <label>
+            <input type="checkbox" name="personality"> Polite
+        </label>
+        <label>
+            <input type="checkbox" name="personality"> Tidy
+        </label>
+
+        </br>
+
+
+        <!--Input elements are a convenient way to get input from your user. They're also self-closing.-->
+        <!--A placeholder does exactly this, displays some text in your <input> element before your user has inputted anything-->
+        <!--To make a text input field required, you can just add the attribute required within your input element.-->
+        <!--In this way, the user will not be able to submit your form until he or she has filled them out.-->
+        <input type="text" required placeholder="cat photo URL"> 
+
+        </br>        
+
+
+        <!--Clicking on the Submit button, it will send the data from your form to the URL you specified with the form's action attribute.-->
+        <button type="submit">Submit</button>
+
+        </br>
+        </form>
+        <p>Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse. Get video posted to internet for chasing
+            red dot leave fur on owners clothes meow to be let out and mesmerizing birds leave fur on owners clothes or favor packaging over toy
+            so purr for no reason. Meow to be let out play time intently sniff hand run outside as soon as door open yet destroy couch.</p>
+        </main>
+
+        <footer id="footer">Copyright Cat Photo App</footer>
+    </body>
+</html>
