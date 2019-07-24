@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The CSS box-model</title>
+        <meta charset="UTF-8">
+        <!--Meta name viewport is only used for initial width of the viewport in mobile devices.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /*By specifying the CSS element like this -> padding: 10px 20px 10px 20px; Without commas! */
+            /*Is the same as declaring the padding-top, padding-right, padding-bottom, padding-left */
+            /*We called this the 'Clockwise Notation' because these four values work like a clock: top, right, bottom, left. */
+            /*The same 'Clockwise Notation' will work for the margin element. Like this -> margin: 10px 20px 10px 20px; Without commas! */
+            .injected-text {
+                margin-bottom: -25px;
+                text-align: center;
+            }
+            /*The two main types of length units in CSS are absolute and relative.*/
+            .box {
+                border-style: solid;
+                border-color: black;
+                border-width: 5px;
+                text-align: center;
+            }
+
+            .yellow-box {
+                background-color: yellow;
+                padding: 10px;
+            }
+            
+            .red-box {
+                background-color: crimson;
+                color: #fff;
+                padding: 1.5em;
+                margin: 20px;
+            }
+
+            .blue-box {
+                background-color: blue;
+                color: #fff;
+                padding: 20px;
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--You may have already noticed this, but all HTML elements are essentially little rectangles.-->
+        <!--Three important properties control the space that surrounds each HTML element: padding, margin, and border.-->
+        <!--An element's padding controls the amount of space between the element's content and its border.-->
+        <div>
+            <h5 class="injected-text">margin</h5>
+            <div class="box yellow-box">
+            <h5 class="box red-box">padding</h5>
+            <h5 class="box blue-box">padding</h5>
+        </div>
+        <!--An element's margin controls the amount of space between an element's border and surrounding elements.-->
+        <!--If you set an element's margin to a negative value, the element will grow larger.-->
+    </body>
+</html>

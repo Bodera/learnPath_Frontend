@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A gentle tutorial of HTML5 basic elements</title>
+        <meta charset="UTF-8">
+        <!--Meta name viewport is only used for initial width of the viewport in mobile devices.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <!--Other option to style your elements is using the style block inside the head element-->
+        <!--Here we can apply styles for each element of the DOM using CSS Selectors-->
+        <style>
+            /*We can prove the inheritance on CSS by setting rules to the principle element of the DOM - the body*/
+            /*Keep in mind that styles defined in classes will override the inherited style */
+            body { 
+                background: #F2F2F2;
+                font-family: 'Open Sans', sans-serif; /*When one font isn't available, you can tell the browser to "degrade" to another font.*/
+            }
+            /*When you use CSS libraries, these may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use !important*/
+            h2 { 
+                color: #F28E85 !important;
+            }
+
+            p { 
+                font-size: 16px;
+                color: #010B40;
+            }
+
+            a {
+                font-style: italic;
+                color: #656B8C;
+            }
+            /* It doesn't matter which order the classes are listed in the HTML element. */
+            /* However, the order of the class declarations in the <style> section are what is important. */
+            /* The second declaration will always take precedence over the first. */
+            /* In the event of a conflict, the browser will use whichever CSS declaration came last.*/
+            /* We can apply classes for reusable styles that can be added to HTML elements. */
+            /* Note that in your CSS style element, class names start with a period '.' */
+            .smaller-image {
+                width: 150px;
+            }
+
+            /* Borders by default have sharp corners. If you want to round them, use the CSS property border-radius*/
+            .thick-blue-border {
+                border-width: 10px;
+                border-style: solid;
+                border-color: #010B40;
+                border-radius: 10px; /*You can also specify it using percentage, i.e.: border-radius: 60%;*/
+            }
+            
+            .lists-background {
+                /*With RGB you specify the brightness of each color with a number between 0 and 255.*/
+                background-color: rgb(235, 217, 217);
+            }
+
+            /*CSS selector for id uses an octothorpe*/
+            /*An id is not reusable and should only be applied to one element.*/
+            /*An id also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the id will be applied.*/
+            #div-of-lists {
+                background-color: rgb(238, 228, 228);
+            }
+
+            #cat-photo-form {
+                /*In CSS, we can use 6 hexadecimal digits to represent colors, two each for the red (R), green (G), and blue (B) components.*/
+                background-color: #656B8C;
+            }
+
+            #footer {
+                /*Red's hex code #FF0000 can be shortened to #F00. This shortened form gives one digit for red, one for green, and one for blue.*/
+                /*But browsers will interpret #FF0000 and #F00 as exactly the same color.*/
+                background-color: #656B8C;
+            }
+            /*The `type` attribute in another of the many CSS selectors that you can use to modify the DOM*/
+            /*The syntax is like that: [attr = value]*/
+            [type='radio'] {
+                margin: 10px 0px 15px 0px;
+            }
+            [type='checkbox'] {
+                margin: 10px 0px 15px 0px;
+            }
+            [type='submit'] {
+                color: #000000;
+                background-color: #F28E85;
+                margin: 10px 5px 10px 5px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!--it is a good practice to end inline style declarations with a semicolon ';' -->
+        <!--remember the HTML style attribute will override any previous styles applied to it.-->
+        <h2 style="color: brown;">Here I used Inline CSS</h2>
+        <h2>My CatPhoto App</h2>
+        <main>
+            <p>View more <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
+            <!--In your HTML elements' class attribute, the class name does not include the period '.' -->
+            <!--You can apply multiple classes to an element using its class attribute, by separating each class name with a space-->
+            <a href="#"><img class="smaller-image thick-blue-border" src="https://bit.ly/fcc-running-cats" alt="three kittens walking in the direction of the camera"></a>
+            <img class="smaller-image thick-blue-border" src="https://bit.ly/fcc-relaxing-cat" alt="a yellow kitten.">
+        </br>
+            <a href="#footer">Jump to the Bottom.</a>
+        </br>
+            <a href="#">Empty, I can't take you to nowhere.</a>
+
+            <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat
+            the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. 
+            Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+
+            <!--You can use an id to style a single element and later you'll learn that you can use them to select and modify specific elements with JavaScript.-->
+            <!--id attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice.-->
+            <div id="div-of-lists">
+                <p>An unordered list of three things that cats love to do:</p>
+                <ul class="lists-background">
+                    <li>Taking a nap.</li>
+                    <li>Gromming.</li>
+                    <li>Scratching.</li>
+                </ul>
+                <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet,
+                shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch
+                scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+                <p>And here is presented a ordered list of three things that cats hates the most:</p>
+                <ol class="lists-background">
+                    <li>Tummy rubs.</li>
+                    <li>Too much attention.</li>
+                    <li>Not enough attention.</li>
+                </ol>
+            </div>
+            
+            <p>Meowwww loved it, hated it, loved it, hated it yet spill litter box, scratch at owner, destroy all furniture, especially couch or lay on arms while you're using the keyboard. 
+        Missing until dinner time toy mouse squeak roll over. With tail in the air lounge in doorway. Man running from cops stops to pet cats, goes to jail.</p>
+
+       
+            <form id="cat-photo-form" action="/submit-cat-photo">
+                <label for="indoor">
+                    <input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor
+                </label>       
+                <label for="outdoor">
+                    <input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor
+                </label> 
+            </br>
+                <label>
+                    <input type="checkbox" name="personality" checked> Generous
+                </label>
+                <label>
+                    <input type="checkbox" name="personality"> Polite
+                </label>
+                <label>
+                    <input type="checkbox" name="personality"> Tidy
+                </label>
+            </br>
+                <input type="text" required placeholder="cat photo URL"> 
+            </br>
+                <button type="submit">Submit</button>
+            </br>
+            </form>
+        
+            <p>Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse. Get video posted to internet for chasing
+            red dot leave fur on owners clothes meow to be let out and mesmerizing birds leave fur on owners clothes or favor packaging over toy
+            so purr for no reason. Meow to be let out play time intently sniff hand run outside as soon as door open yet destroy couch.
+            </p>
+        </main>
+        <footer id="footer">
+            Copyright Cat Photo App
+        </footer>
+    </body>
+</html>
