@@ -14,3 +14,6 @@ This section covers some of the basic tools developers use to create their own v
 * CSS Property `font-size`
 * CSS Property `box-shadow`
 * CSS Property `opacity`
+* CSS Property `text-transform`
+* CSS Properties `font-size` and `font-weight`
+* CSS Property `line-weight`
