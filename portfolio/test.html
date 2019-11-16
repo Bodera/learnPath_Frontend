@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body {
+                background-color: rgb(237, 229, 190);
+                margin: 0;
+            }
+
+            #header {
+                background-color: #f1f1f1; /* Grey background */
+                padding: 50px 10px; /* Some padding */
+                color: black;
+                text-align: center; /* Centered text */
+                font-size: 90px; /* Big font size */
+                font-weight: bold;
+                position: relative; /* Fixed position - sit on top of the page */
+                top: 0;
+                width: 100%; /* Full width */
+                transition: 0.2s; /* Add a transition effect (when scrolling - and font size is decreased) */
+                }
+             /* The side navigation menu */
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 60px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+
+            /* When you mouse over the navigation links, change their color */
+            .sidenav a:hover {
+            color: #f1f1f1;
+            }
+
+            /* Position and style the close button (top right corner) */
+            .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            }
+
+            /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+            #main {
+            transition: margin-left .5s;
+            padding: 50px;
+            }
+
+            /* Styling the Open element which expands our sidenav*/
+            #expand-sidenav {
+                padding: 20px 10px;
+                font-size: 50px;
+                cursor: pointer;
+            }
+
+            /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+            @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+            } 
+        </style>
+        <script>
+            // When the user scrolls down 50px from the top of the document, resize the header's font size
+                window.onscroll = () => 
+                { 
+                    scrollFunction() 
+                };
+
+                function scrollFunction() {
+                    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) 
+                    {
+                        document.getElementById("header").style.fontSize = "30px";
+                    } else 
+                    {
+                        document.getElementById("header").style.fontSize = "90px";
+                    }
+                }
+                function openNav() 
+                { 
+                    document.getElementById("mySidenav").style.width = "100%";
+                    document.getElementById("mySidenav").style.opacity = "0.8";  
+                    document.getElementById("mySidenav").style.width="250px";
+                    document.getElementById("main").style.marginLeft="250px";
+                    //document.getElementById("expand-sidenav").style.opacity="0";
+                    document.getElementById("expand-sidenav").innerHTML="&#9674;";
+                }
+                function closeNav() 
+                {
+                    document.getElementById("mySidenav").style.width = "0%";
+                    document.getElementById("mySidenav").style.opacity = "0";
+                    document.getElementById("main").style.marginLeft= "0%";
+                    document.body.style.backgroundColor= "rgb(237, 229, 190)";
+                    document.getElementById("expand-sidenav").style.opacity="1";
+                    document.getElementById("expand-sidenav").innerHTML="&#10731;";
+                    //document.body.style.opacity = "0";
+                }
+        </script>
+    </head>
+    <body>
+
+         <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#935;</a>
+            <a href="#">About me</a>
+            <a href="#">Competences</a>
+            <a href="#">Personality</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <!-- Use any element to open the sidenav -->
+        <span id="expand-sidenav" onclick="openNav()">&#10731;</span>
+            <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+        <div id="main">
+            <div id="header">Header</div> 
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan arcu nec vulputate suscipit. Aliquam erat volutpat. Maecenas dictum eget neque in dignissim. Vestibulum dolor diam, vestibulum nec dolor id, gravida convallis tellus. Nulla pretium, mi in condimentum porttitor, neque neque lobortis massa, vitae pulvinar orci nisi eget nunc. Pellentesque ut ex turpis. Vivamus sollicitudin orci ac diam congue vehicula. Aliquam quis ligula vitae ante feugiat iaculis. Nulla eu feugiat urna. Suspendisse vestibulum eros magna, iaculis volutpat libero facilisis eget.</p>
+            <p>
+                Vivamus id aliquam erat, nec commodo enim. Sed viverra dui eu ex fermentum, a tincidunt nunc euismod. Proin auctor ipsum nulla, eu varius justo eleifend sit amet. Donec eu est posuere, porta ex faucibus, bibendum sem. Proin iaculis mi a quam vulputate, quis vehicula leo ultrices. Vivamus malesuada dolor enim, non vulputate urna faucibus eu. Etiam vitae magna turpis. Cras tempor malesuada nunc, sed sollicitudin mauris semper et. Mauris purus sem, tempus at sollicitudin non, mattis ut arcu.</p>
+            <p>
+                Proin fringilla hendrerit venenatis. Aliquam erat volutpat. Mauris vulputate felis id ligula malesuada, sed ultricies sem rutrum. Pellentesque non elit porttitor, iaculis urna ut, fringilla magna. Sed pulvinar nec nisl vel laoreet. Nunc vitae leo vel erat egestas posuere ut eu sapien. Maecenas sodales turpis quis est suscipit tempus.</p>
+            <p>
+                Nullam vehicula dolor sem, ac lacinia quam tincidunt eget. Nam vitae nibh ligula. Nulla rutrum diam eros, non euismod odio sodales eget. Morbi nec neque justo. Aenean velit felis, pellentesque euismod enim id, facilisis fringilla mi. Aliquam finibus interdum nulla vitae euismod. Etiam at faucibus urna, nec viverra ipsum. Pellentesque imperdiet sem ex, eget posuere mauris tincidunt et.</p>
+            <p>
+                Mauris elementum diam lorem, eu varius massa pretium ac. Fusce id justo sit amet turpis tristique consequat. In in molestie orci. Ut aliquam nisl urna, ac commodo ante suscipit nec. Sed porttitor sapien nec lacus interdum tristique. Phasellus porttitor ligula non diam porttitor, eu sagittis sem semper. Maecenas non nulla metus. Aliquam vel tempus eros, eu sagittis diam. Aenean eu pellentesque nisi. Nam eget maximus lectus. 
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan arcu nec vulputate suscipit. Aliquam erat volutpat. Maecenas dictum eget neque in dignissim. Vestibulum dolor diam, vestibulum nec dolor id, gravida convallis tellus. Nulla pretium, mi in condimentum porttitor, neque neque lobortis massa, vitae pulvinar orci nisi eget nunc. Pellentesque ut ex turpis. Vivamus sollicitudin orci ac diam congue vehicula. Aliquam quis ligula vitae ante feugiat iaculis. Nulla eu feugiat urna. Suspendisse vestibulum eros magna, iaculis volutpat libero facilisis eget.</p>
+            <p>
+                Vivamus id aliquam erat, nec commodo enim. Sed viverra dui eu ex fermentum, a tincidunt nunc euismod. Proin auctor ipsum nulla, eu varius justo eleifend sit amet. Donec eu est posuere, porta ex faucibus, bibendum sem. Proin iaculis mi a quam vulputate, quis vehicula leo ultrices. Vivamus malesuada dolor enim, non vulputate urna faucibus eu. Etiam vitae magna turpis. Cras tempor malesuada nunc, sed sollicitudin mauris semper et. Mauris purus sem, tempus at sollicitudin non, mattis ut arcu.</p>
+            <p>
+                Proin fringilla hendrerit venenatis. Aliquam erat volutpat. Mauris vulputate felis id ligula malesuada, sed ultricies sem rutrum. Pellentesque non elit porttitor, iaculis urna ut, fringilla magna. Sed pulvinar nec nisl vel laoreet. Nunc vitae leo vel erat egestas posuere ut eu sapien. Maecenas sodales turpis quis est suscipit tempus.</p>
+            <p>
+                Nullam vehicula dolor sem, ac lacinia quam tincidunt eget. Nam vitae nibh ligula. Nulla rutrum diam eros, non euismod odio sodales eget. Morbi nec neque justo. Aenean velit felis, pellentesque euismod enim id, facilisis fringilla mi. Aliquam finibus interdum nulla vitae euismod. Etiam at faucibus urna, nec viverra ipsum. Pellentesque imperdiet sem ex, eget posuere mauris tincidunt et.</p>
+            <p>
+                Mauris elementum diam lorem, eu varius massa pretium ac. Fusce id justo sit amet turpis tristique consequat. In in molestie orci. Ut aliquam nisl urna, ac commodo ante suscipit nec. Sed porttitor sapien nec lacus interdum tristique. Phasellus porttitor ligula non diam porttitor, eu sagittis sem semper. Maecenas non nulla metus. Aliquam vel tempus eros, eu sagittis diam. Aenean eu pellentesque nisi. Nam eget maximus lectus. </p>
+        </div> 
+    </body>
+</html>
