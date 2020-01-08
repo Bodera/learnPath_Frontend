@@ -14,15 +14,17 @@ body {
 }
 
 #header {
-
-    padding: 10px 10px; /* Some padding */
+    /*background-image: url("Images/header.jpeg");*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /*padding: 10px 10px;  Some padding */
     color: black;
     text-align: center; /* Centered text */
     font-size: 90px; /* Big font size */
     font-weight: bold;
     position: relative; /* Fixed position - sit on top of the page */
     top: 0;
-    width: 100%; /* Full width */
+    height: 100%; /* Full width */
     transition: 0.2s; /* Add a transition effect (when scrolling - and font size is decreased) */
 }
 
