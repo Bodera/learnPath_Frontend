@@ -1,0 +1,110 @@
+/*the following it's just a basic reset*/
+
+html {
+	box-sizing: border-box; /*allows to include padding and border in an element's total width and height*/
+}
+
+ /*for all elements, before and after all elements*/
+ 
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+}
+
+/* responsiveness purposes */
+
+embed,
+iframe,
+img,
+object,
+video {
+	max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr {
+	margin: 0;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:focus {
+	outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	display: block;
+}
+
+/*setting all list configuration properties on a shoot*/
+
+ol,
+ul {
+	list-style: none;
+}
+
+/*hard properties reset from default values*/
+
+input,
+textarea,
+button {
+	border: 0;
+	border-radius: 0;
+	background-color: transparent;
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	outline: none;
+	appearance: none;
+	text-align: left;
+}
+
+input:hover,
+input:active,
+input:focus,
+textarea:hover,
+textarea:active,
+textarea:focus,
+button:hover,
+button:active,
+button:focus {
+	outline: none;
+}
+
+/*root element of a HTML is the <html>*/
+
+:root{
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+/*Cascading Style Sheets, we have to do all that previous reset to be able to customize it now*/
+
+html {
+	
+}
