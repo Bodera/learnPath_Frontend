@@ -1,11 +1,41 @@
-# Web-design
+# Web design
 
-__O que é o design?__
-A Apple é a melhor referência em design do mundo.
+The course will teach the student the steps to create a responsive website from scratch. Even code and design will be explored.
 
-O curso adota a definição de Paul Rand - "Design é acrescentar valor e significado, simplificar, esclarecer, modificar, dignificar, dramatizar, persuadir e talvez até mesmo entreter."
+## Course summary
 
-* Exemplo de site que agrega valor e significado: https://www.v76.com/
-* Exemplo de site que simplifica a navegação: https://kanboard.org/ (você já sabe do que se trata o produto)
-* Exemplo de site que explora esclarecer o propósito da organização: http://talk.global/
-* Exemplo de site que busca dignificar o produto à venda: newjumoconcept.com/en/
+- Intro
+  - Course aims
+- Theory of design
+  - Fundamentals
+  - User experience
+  - User interface
+- Project design
+  - Information architecture
+  - Wireframe
+  - Adobe XD
+  - Project design: Bikcraft
+- Coding basics
+  - HTML
+  - CSS
+- Project coding
+  - HTML
+  - CSS
+  - Responsiveness
+  - JS
+  - Animations
+  - Hosting
+- Final considerations
+  - Additional tips
+  - Suggestions
+
+## Inspiration
+
+Feeling blue? Check out the links below, which feature a collection of creative and beautiful websites.
+
+- [CSS reel](http://cssreel.com/winners)
+- [CSS design awards](https://cssdesignawards.com/)
+- [CSS awards](https://www.cssawards.net/)
+- [Awwwards](https://www.awwwards.com/)
+- [CSS winner](https://www.csswinner.com/)
+- [CSS in real life](https://css-irl.info/) (informative blog)
