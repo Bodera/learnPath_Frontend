@@ -1,6 +1,8 @@
-# Design fundamentals
+# Design theory
 
-## Shape and space
+## Design fundamentals
+
+### Shape and space
 
 We can separate the forms into 2 sets of __geometric__ and __organic__. Geometric forms have angular and artificial characteristics, as they were created by us and are not found in nature. Organic forms are noticeably more curvy and have gestural characteristics.
 
