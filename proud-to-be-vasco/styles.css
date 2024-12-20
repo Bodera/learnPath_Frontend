@@ -1,0 +1,107 @@
+@font-face {
+    src: url("fonts/Playfair.ttf");
+    font-family: Playfair;
+}
+
+body {
+    text-align: center;
+    font-family: 'Playfair';
+    background: linear-gradient(#0b090a, #660708);
+    color: #f5f3f4;
+    text-shadow: 0 0 4px black;
+}
+
+#busto-img {
+    width: 150px;
+    border-radius: 50%;
+    border: 6px solid #b1a7a6;
+    margin-bottom: 10px;
+}
+
+.calling {
+    background: #b1a7a6;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0 10px 0;
+}
+
+#vasco-date {
+    margin: 0;
+    background: #b1a7a6;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+video{
+    border-radius: 4px;
+    margin: 0 0 3px 0;
+  }
+  
+:picture-in-picture {
+    box-shadow: 0 0 0 5px #0081ff;
+    background-color: #565652;
+}
+
+.vasco-section {
+    margin-top: 50px;
+}
+
+.section-title {
+    margin-bottom: 10px;
+}
+
+#monumento {
+    height: 200px;
+    background-image: url("images/monument.jpg");
+    animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#logos {
+    height: 200px;
+    background-image: url("images/logos.jpg");
+    animation:animatezoom 0.6s
+}
+
+@keyframes animatezoom{
+    from {
+        transform:scale(0)
+    } 
+    to {
+        transform:scale(1)
+    }
+}
+
+#vaco-img-cheers {
+    height: 200px;
+    background-image: url("images/logos.jpg");
+}
+
+.vaco-img {
+    margin: 20px auto;
+    max-width: 400px;
+    height: 400px;
+    border: 6px solid white;
+    border-radius: 10px;
+    background-image: url("images/question.png");
+    background-size: cover;
+}
+
+#footer {
+    font-style: italic;
+    width: 400px;
+    margin: 40px auto 20px;
+}
+
+a {
+    color: #f5f3f4;
+}
