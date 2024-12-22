@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+        <link rel="manifest" href="./site.webmanifest">
+
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <label for="input-el">Enter your favorite link:</label>
+        <input type="text" id="input-el" placeholder="https://lipsum.com/">
+        <button id="input-btn">SAVE INPUT</button>
+        <button id="delete-btn">DELETE ALL</button>
+        <ul id="ul-el">
+        </ul>
+        
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"> </script>
+
+        <script>
+            //supase module imported with name supabase by default
+
+            /*  START SUPABASE CONSTANTS */
+            const SUPA_URL = prompt("Enter your Supabase URL")
+            const SUPA_KEY = prompt("Enter your Supabase Key")
+            const DB_INSTANCE = supabase.createClient(SUPA_URL, SUPA_KEY)
+            const TABLE = "bookmarks"
+            /*  END SUPABASE CONSTANTS */
+
+            /*  START DOM CONSTANTS */
+            const inputEl = document.getElementById("input-el")
+            const inputBtn = document.getElementById("input-btn")
+            const ulEl = document.getElementById("ul-el")
+            const deleteBtn = document.getElementById("delete-btn")
+            /*  END DOM CONSTANTS */
+            
+            /* START DOM RELATED FUNCTIONS */
+            let bookmarks = []
+            getBookmarks()
+
+            deleteBtn.addEventListener("dblclick", function() {
+                deleteBookmarks()
+                render([])
+            })
+
+            inputBtn.addEventListener("click", function() {
+                if (!inputEl.value.trim()) return
+
+                let duplicated = false
+                Object.keys(bookmarks).forEach(function(prop) {
+                    duplicated = bookmarks[prop].url === inputEl.value
+                })
+                
+                if (duplicated) {
+                    getBookmarks()
+                    return
+                }
+
+                putBookmark(inputEl.value)
+                getBookmarks()
+            })
+            /* END DOM RELATED FUNCTIONS */
+
+            /**
+             * Renders a list of bookmarks as HTML list items and updates the DOM.
+             * @param {Array} bookmarks - An array of bookmark objects, each containing a 'url' property.
+             */
+            function render(bookmarks) {
+                let listItems = ""
+                for (let i = 0; i < bookmarks.length; i++) {
+                    listItems += `
+                        <li>
+                            <a target='_blank' href='${bookmarks[i].url}'>
+                                ${bookmarks[i].url}
+                            </a>
+                        </li>
+                    `
+                }
+                ulEl.innerHTML = listItems
+            }
+
+            /**
+             * Retrieves all bookmarks from the database and renders them.
+             * @function
+             */
+            async function getBookmarks() {
+                inputEl.value = ""
+                let { data, error} = await DB_INSTANCE
+                    .from(TABLE)
+                    .select('*')
+
+                bookmarks = Object.values(data)
+                render(bookmarks)
+            }
+
+            /**
+             * Inserts a new bookmark URL into the database.
+             * @async
+             * @function
+             * @param {string} url - The URL of the bookmark to be inserted.
+             * @returns {Promise<void>}
+             */
+             async function putBookmark(url) {
+                const { error } = await DB_INSTANCE
+                    .from(TABLE)
+                    .insert({ url: url })
+            }
+
+            /**
+             * Deletes all bookmarks from the database which has an 'id' greater than 0.
+             * @async
+             * @function
+             * @returns {Promise<void>}
+             */
+            async function deleteBookmarks() {
+                const { error } = await DB_INSTANCE
+                    .from(TABLE)
+                    .delete()
+                    .gt("id", 0)
+            }
+        </script>
+
+    </body>
+</html>
