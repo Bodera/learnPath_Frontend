@@ -8,5 +8,10 @@
     "id": 2,
     "email": "felipe@hotmail.com",
     "password": "$2b$10$Rygvoxagcml.zfAr42Ol/upsHyimwMW29x8.sbcGQUzUoZSRhbLIi"
+  },
+  {
+    "id": 3,
+    "email": "name@domain.com",
+    "password": "$2b$10$3mYr9G9cJGx9J4k5u/k61uTHswqnyzVwPvhSJECkUA5g3K5u5.GCy"
   }
 ]

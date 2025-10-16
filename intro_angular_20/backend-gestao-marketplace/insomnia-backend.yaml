@@ -42,7 +42,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:3000/register
+      - url: http://localhost:3000/api/users/register
         name: Register
         meta:
           id: req_8ffbdba6306f4a7aa6e3a0d174884710
